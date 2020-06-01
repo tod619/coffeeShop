@@ -34,4 +34,61 @@ body {
   font-family: "La Belle Aurore", cursive;
 }
 
+/* End: Global */
+
 /* Header */
+.header {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    background: url("img/headerBcg.jpeg") center/cover fixed no-repeat;
+  }
+}
+
+/* Banner */
+.banner {
+  text-align: center;
+  z-index: 3;
+}
+
+.banner__title {
+  font-size: 4rem;
+  text-transform: capitalize;
+  color: var(--brightYellow);
+}
+
+@media screen and (min-width: 768px) {
+  .banner__title {
+    font-size: 9rem;
+  }
+}
+
+.banner__social-icon {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+  border: 0.1rem solid var(--black);
+  border-radius: 50%;
+  padding: 0.25rem;
+  transition: all 0.5s linear;
+}
+.banner__social-icon:hover {
+  background: var(--brightYellow);
+  color: var(--black);
+}
+
+.banner__icons {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 2rem);
+  grid-column-gap: 0.5rem;
+  justify-content: center;
+}
