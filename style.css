@@ -17,3 +17,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Body */
+body {
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("img/bodyBcg.jpeg");
+  color: var(--black);
+}
+
+/* Global styles */
+.belle-font {
+  font-family: "La Belle Aurore", cursive;
+}
+
+/* Header */
