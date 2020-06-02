@@ -1,16 +1,25 @@
 function eventListners() {
-  // Hide preloader
-  // All images and scripts have loaded
+  const ui = new UI();
 
   // add event listner to window
   window.addEventListener("load", () => {
-    document.querySelector(".preloader").style.display = "none";
+    ui.hidePreLoader();
   });
 
   // navigation btn
   document.querySelector(".navBtn").addEventListener("click", () => {
-    document.querySelector(".nav").classList.toggle("nav--show");
+    ui.showNav();
   });
 }
+
+function UI() {}
+
+UI.prototype.hidePreLoader = function () {
+  document.querySelector(".preloader").style.display = "none";
+};
+
+UI.prototype.showNav = function () {
+  document.querySelector(".nav").classList.toggle("nav--show");
+};
 
 eventListners();
