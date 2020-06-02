@@ -229,6 +229,11 @@ body {
     height: 100%;
     width: 50%;
     border-radius: 0.5rem;
+    transition: left 0.5s linear;
+  }
+
+  .switch-btn-toggle {
+    left: 50%;
   }
 }
 /* End: Video Switch */
