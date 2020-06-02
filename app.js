@@ -31,9 +31,19 @@ UI.prototype.showNav = function () {
 
 //control video
 UI.prototype.videoControls = function () {
-  document
-    .querySelector(".video__switch-btn")
-    .classList.toggle("switch-btn-toggle");
+  //   document
+  //     .querySelector(".video__switch-btn")
+  //     .classList.toggle("switch-btn-toggle");
+  let btn = document.querySelector(".video__switch-btn");
+  let videoItem = document.querySelector(".video__item");
+
+  if (!btn.classList.contains("switch-btn-toggle")) {
+    btn.classList.add("switch-btn-toggle");
+    videoItem.pause();
+  } else {
+    btn.classList.remove("switch-btn-toggle");
+    videoItem.play();
+  }
 };
 
 eventListners();
