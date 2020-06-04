@@ -342,3 +342,42 @@ body {
   color: green;
   border-color: green;
 }
+
+.drink-form__title,
+.drink-card__title {
+  font-size: 3rem;
+}
+
+.input-name,
+.input-lastname,
+.input-email {
+  width: 100%;
+}
+.input-name,
+.input-lastname,
+.input-email,
+.input-submit {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(111, 87, 77, 0.6);
+  color: var(--darkBrown);
+  border: none;
+  outline: none;
+}
+.input-name::placeholder,
+.input-lastname::placeholder,
+.input-email::placeholder {
+  color: var(--darkBrown);
+  text-transform: capitalize;
+}
+.input-submit {
+  background: var(--yellow);
+  color: var(--black);
+  transition: all 0.5s linear;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.input-submit:hover {
+  opacity: 0.8;
+}
