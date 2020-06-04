@@ -15,6 +15,24 @@ function eventListners() {
   document.querySelector(".video__switch").addEventListener("click", () => {
     ui.videoControls();
   });
+
+  // submit the form
+  document
+    .querySelector(".drink-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.querySelector(".input-name").value;
+      const lastname = document.querySelector(".input-lastname");
+      const email = document.querySelector(".input-email");
+
+      let value = ui.checkEmpty(name, lastname, email);
+
+      if (value) {
+        ui.showFeedback("Enjoy your free coffe", "success");
+      } else {
+        ui.showFeedback("some form values empty", "error");
+      }
+    });
 }
 
 function UI() {}
@@ -44,6 +62,49 @@ UI.prototype.videoControls = function () {
     btn.classList.remove("switch-btn-toggle");
     videoItem.play();
   }
+};
+
+// Check empty
+
+UI.prototype.checkEmpty = function (name, lastname, email) {
+  let result;
+
+  if (name === "" || lastname === "" || email === "") {
+    result = false;
+  } else {
+    result = true;
+  }
+
+  return result;
+};
+
+// Show feedback
+UI.prototype.showFeedback = function (text, type) {
+  // if (type === "success") {
+  //   let feedback = document.querySelector(".drink-form__feedback");
+  //   feedback.innerText = text;
+  //   feedback.classList.add(type);
+  //   this.removeAlert(type);
+  // } else if (type === "error") {
+  //   let feedback = document.querySelector(".drink-form__feedback");
+  //   feedback.innerText = text;
+  //   feedback.classList.add(type);
+  //   this.removeAlert(type);
+  // }
+
+  let feedback = document.querySelector(".drink-form__feedback");
+  feedback.innerText = text;
+  feedback.classList.add(type);
+  this.removeAlert(type);
+};
+
+// Remove the alert
+UI.prototype.removeAlert = function (type) {
+  setTimeout(function () {
+    let feedback = document.querySelector(".drink-form__feedback");
+    feedback.innerText = "";
+    feedback.classList.remove(type);
+  }, 3000);
 };
 
 eventListners();
