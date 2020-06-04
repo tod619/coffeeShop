@@ -310,3 +310,35 @@ body {
     grid-template-rows: 1fr 1fr;
   }
 }
+
+/* Drink Section */
+.drink {
+  background-color: var(--brown);
+  color: var(--brightYellow);
+  text-transform: capitalize;
+}
+
+.drink-form,
+.drink-card {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  grid-row-gap: 1.25rem;
+}
+
+.drink-form__feedback {
+  border: 0.1rem solid var(--brightYellow);
+  padding: 0.25rem;
+  display: none;
+}
+.error {
+  display: block;
+  color: red;
+  border-color: red;
+}
+.success {
+  display: block;
+  color: green;
+  border-color: green;
+}
