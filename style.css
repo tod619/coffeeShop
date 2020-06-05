@@ -424,6 +424,7 @@ body {
 .work-item {
   background: linear-gradient(var(--yellow), var(--yellow));
   overflow: hidden;
+  position: relative;
 }
 
 .work-item:hover .work-item__img {
@@ -436,4 +437,25 @@ body {
   height: 100%;
   display: block;
   transition: all 1s linear;
+}
+
+.work-item__icon {
+  position: absolute;
+  color: var(--brightYellow);
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  font-size: 4rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  transform: scale(0);
+}
+
+.work-item__icon:hover {
+  color: var(--brown);
+  cursor: pointer;
+}
+
+.work-item:hover .work-item__icon {
+  transform: scale(1.3) translate(-50%, -50%);
 }
