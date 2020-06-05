@@ -22,13 +22,16 @@ function eventListners() {
     .addEventListener("submit", function (event) {
       event.preventDefault();
       const name = document.querySelector(".input-name").value;
-      const lastname = document.querySelector(".input-lastname");
-      const email = document.querySelector(".input-email");
+      const lastname = document.querySelector(".input-lastname").value;
+      const email = document.querySelector(".input-email").value;
 
       let value = ui.checkEmpty(name, lastname, email);
 
       if (value) {
+        let customer = new Customer(name, lastname, email);
         ui.showFeedback("Enjoy your free coffe", "success");
+        ui.showCustomer(customer);
+        ui.clearFields();
       } else {
         ui.showFeedback("some form values empty", "error");
       }
@@ -106,5 +109,36 @@ UI.prototype.removeAlert = function (type) {
     feedback.classList.remove(type);
   }, 3000);
 };
+
+// Show customer function
+UI.prototype.showCustomer = function (customer) {
+  const images = [1, 2, 3, 4, 5];
+  let random = Math.floor(Math.random() * images.length);
+  const div = document.createElement("div");
+  div.classList.add("person");
+  div.innerHTML = `<img
+                src="img/person-${random}.jpeg"
+                alt="lucky person"
+                class="person__thumbnail"
+              />
+              <h4 class="person__name">${customer.name}</h4>
+              <h4 class="person__lastname">${customer.lastname}</h4>`;
+
+  document.querySelector(".drink-card__list").appendChild(div);
+};
+
+// Clear the fields of the form
+UI.prototype.clearFields = function () {
+  document.querySelector(".input-name").value = "";
+  document.querySelector(".input-lastname").value = "";
+  document.querySelector(".input-email").value = "";
+};
+
+// Customer Object
+function Customer(name, lastname, email) {
+  this.name = name;
+  this.lastname = lastname;
+  this.email = email;
+}
 
 eventListners();
