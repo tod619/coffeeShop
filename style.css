@@ -414,3 +414,26 @@ body {
     grid-gap: 1rem;
   }
 }
+
+/* Work Section */
+.work-container {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.work-item {
+  background: linear-gradient(var(--yellow), var(--yellow));
+  overflow: hidden;
+}
+
+.work-item:hover .work-item__img {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+
+.work-item__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 1s linear;
+}
