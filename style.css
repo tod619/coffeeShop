@@ -470,7 +470,7 @@ body {
 
 @media screen and (min-width: 992px) {
   .work-container {
-    min-height: 120vh;
+    height: 100vh;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
