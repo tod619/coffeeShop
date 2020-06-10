@@ -562,3 +562,39 @@ body {
     width: 60vw;
   }
 }
+
+/* Contact Section */
+.contact-container {
+  max-width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-row-gap: 1rem;
+}
+
+.contact-info {
+  display: grid;
+  justify-content: center;
+}
+
+.contact-item {
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.contact-item__icon {
+  font-size: 3rem;
+  color: var(--yellow);
+}
+
+.contact-item__title {
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  letter-spacing: 0.25rem;
+  font-style: italic;
+}
+
+.contact-item__text {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--grey);
+}
