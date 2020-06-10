@@ -36,6 +36,22 @@ function eventListners() {
         ui.showFeedback("some form values empty", "error");
       }
     });
+
+  // Display modal
+  const links = document.querySelectorAll(".work-item__icon");
+
+  links.forEach(function (item) {
+    item.addEventListener("click", (e) => {
+      // e.preventDefault();
+      // console.log("clicked");
+      ui.showModal(e);
+    });
+  });
+
+  // Hide modal
+  document.querySelector(".work-modal__close").addEventListener("click", () => {
+    ui.closeModal();
+  });
 }
 
 function UI() {}
@@ -140,5 +156,25 @@ function Customer(name, lastname, email) {
   this.lastname = lastname;
   this.email = email;
 }
+
+// Show the modal when an image is clicked
+UI.prototype.showModal = function (e) {
+  e.preventDefault();
+  if (e.target.parentElement.classList.contains("work-item__icon")) {
+    let id = e.target.parentElement.dataset.id;
+
+    const modal = document.querySelector(".work-modal");
+    const modalItem = document.querySelector(".work-modal__item");
+
+    modal.classList.add("work-modal--show");
+    modalItem.style.backgroundImage = `url(img/work-${id}.jpeg)`;
+  }
+};
+
+// Close the modal when the close icon is clicked
+UI.prototype.closeModal = function () {
+  const modal = document.querySelector(".work-modal");
+  modal.classList.remove("work-modal--show");
+};
 
 eventListners();
